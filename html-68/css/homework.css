@@ -1,0 +1,28 @@
+body{
+    background: #252525;
+    color: white;
+    font-size: 32px;
+}
+.relative-block{
+    margin-left: 50px;
+    overflow: hidden;
+}
+.block--white{
+    position: fixed;
+    left: 50%;
+    bottom: 100px;
+    right: 50px;
+    min-height: 100px;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+.circle--red{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50px;
+    left: 15%;
+    background: #ff0000;
+    border-radius: 50%;
+}
