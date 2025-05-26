@@ -51,7 +51,7 @@
 	border-radius: 60px;
 	padding: 3px 15px;
 	height: 62px;
-	transition: var (--transition);
+	transition: var(--transition);
 }
 .btn:hover {
 	background: #ff9138;
