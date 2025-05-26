@@ -19,17 +19,19 @@
 (function(){
     document.addEventListener('click', modalInit);
     function modalInit(e){
-        e.preventDefault()
         const modalBtn = e.target.closest('.about__img-btn');
         const closeModal = e.target.closest('.modal__cancel');
         const modal = e.target.closest('.modal__window');
         if (document.body.classList.contains('body--opened-modal')){
             if (closeModal || !modal){
                 document.body.classList.remove('body--opened-modal')
+                e.preventDefault()
             }
         }else{
-            if (modalBtn)
+            if (modalBtn){
                 document.body.classList.toggle('body--opened-modal')
+                e.preventDefault()
+                }
         }
     }
 })()
