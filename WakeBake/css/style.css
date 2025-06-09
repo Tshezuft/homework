@@ -1,9 +1,7 @@
 @import "fonts.css";
 @import "reset.css";
 @import "global.css";
-
 @import "header.css";
-
 @import "footer.css";
 
 /* ==============================about============================== */
@@ -57,7 +55,7 @@
 	content: "";
 	position: absolute;
 	inset: 5px;
-	border: 1px solid #ceaad0;
+	border: 1px solid var(--accent-text-2);
 	border-radius: 50%;
 	opacity: 0;
 	transition: var(--transition);
@@ -178,7 +176,7 @@
 .program__price-text {
 	line-height: 1.6;
 	text-transform: uppercase;
-	color: #ceaad0;
+	color: var(--accent-text-2);
 	margin-bottom: 5px;
 }
 .program__price-value {
@@ -320,7 +318,7 @@
 	width: 100%;
 }
 .accordion-content__title {
-	color: #ceaad0;
+	color: var(--accent-text-2);
 	line-height: 1.6;
 	text-transform: uppercase;
 	margin-bottom: 20px;
@@ -336,7 +334,7 @@
 .accordion-content__icon {
 	width: 24px;
 	height: 24px;
-	border: 1px solid #ceaad0;
+	border: 1px solid var(--accent-text-2);
 	border-radius: 50%;
 
 	display: inline-flex;
@@ -448,8 +446,6 @@
 
 /* ========================testimonials======================== */
 
-.testimonials {
-}
 
 .testimonials__inner {
 	display: flex;
@@ -464,8 +460,7 @@
 .testimonials__title {
 	margin-bottom: 20px;
 }
-.testimonials__text {
-}
+
 .testimonials__nav {
 	display: flex;
 	align-items: center;
@@ -564,10 +559,9 @@
 	color: var(--heading-text);
 }
 .testimonials__student-inst {
-	color: #ceaad0;
+	color: var(--accent-text-2);
 }
-.testimonials__quote {
-}
+
 .testimonials__quote span {
 	display: block;
 	font-family: "Gabriola", sans-serif;
@@ -586,6 +580,117 @@
 }
 .testimonials__scrollbar .swiper-scrollbar-drag {
 	background: var(--accent-color);
+}
+
+/* ====================contact========================= */
+.contact {
+	padding: 140px 0;
+	background: url("../img/decor/last-bg.png") 50% 0% / cover no-repeat;
+}
+
+.contact__inner {
+	display: flex;
+	gap: 84px;
+	align-items: end;
+	position: relative;
+}
+.contact__inner::before {
+	content: url("../img/decor/berries.png");
+	position: absolute;
+	top: -4%;
+	left: 0%;
+}
+.contact__inner::after {
+	content: url("../img/decor/triple-berries.png");
+	position: absolute;
+	top: 4%;
+	right: 0%;
+}
+
+
+.contact__img img {
+	width: 100%;
+	filter: drop-shadow(0 4px 30px #c6b0a14d);
+}
+.contact__body {
+	max-width: 420px;
+}
+.contact__title {
+	margin-bottom: 20px;
+}
+
+.contact__text {
+	margin-bottom: 40px;
+}
+
+.contact__label {
+	margin-bottom: 10px;
+}
+.contact__input {
+	display: block;
+	border: 1px solid var(--input-color);
+	background: transparent;
+	border-radius: 100px;
+	padding: 19px 41px 19px 28px;
+	width: 100%;
+	font-size: 16px;
+	transition: var(--transition);
+	margin-bottom: 20px;
+}
+.contact__input:hover {
+	border-color: var(--accent-color);
+}
+.contact__input::placeholder {
+	color: var(--input-color);
+	transition: var(--transition);
+}
+.contact__input:hover::placeholder {
+	color: var(--accent-color);
+}
+
+.contact__check-label {
+	display: flex;
+	align-items: start;
+	gap: 5px;
+	max-width: 288px;
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+.contact__check-label a {
+	text-decoration: underline;
+	transition: var(--transition);
+}
+.contact__check-label a:hover {
+	color: var(--accent-color);
+}
+.contact__checkbox {
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	border: 1.5px solid var(--input-color);
+	border-radius: 4px;
+	transition: var(--transition);
+	flex-shrink: 0;
+	cursor: pointer;
+	position: relative;
+}
+.contact__checkbox::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: url(../img/icons/check.svg) 50% 50% no-repeat;
+	opacity: 0;
+	transition: var(--transition);
+}
+.contact__checkbox:hover {
+	border: 1.5px solid var(--accent-color);
+}
+.contact__checkbox:checked {
+	background: var(--accent-color);
+	border: 1.5px solid var(--accent-color);
+}
+.contact__checkbox:checked::before {
+	opacity: 1;
 }
 
 /* ============================================= */
@@ -611,7 +716,17 @@
 	.tab-controls {
 		flex-wrap: wrap;
 	}
+
 	/*  */
+	.contact__inner {
+		gap: 30px;
+		align-items: center;
+	}
+	.contact__inner::after {
+		top: -20%;
+	}
+
+	/* ---------------------------------------- */
 	.footer__inner {
 		justify-content: space-between;
 		/* grid-template-columns: repeat(3, auto);
@@ -700,6 +815,13 @@
 		height: 6px;
 	}
 	/*  */
+	.contact__inner {
+		justify-content: center;
+	}
+	.contact__img {
+		display: none;
+	}
+	/* ------------------------------------------------------ */
 	.footer__inner {
 		justify-content: center;
 		grid-template: none;
@@ -778,8 +900,12 @@
 		flex-direction: column;
 		align-items: stretch;
 	}
-	.testimonials__nav{
+	.testimonials__nav {
 		align-self: end;
+	}
+
+	.contact__inner::before{
+		display: none;
 	}
 }
 
@@ -860,16 +986,25 @@
 	.gallery__content {
 		flex-direction: column;
 	}
-		/* ================= */
-	.testimonials__inner{
+	/* ================= */
+	.testimonials__inner {
 		margin-bottom: 20px;
 	}
 
-	.testimonials__slide{
+	.testimonials__slide {
 		flex-direction: column;
 		align-items: center;
-	
 	}
+	/*  */
+
+	.contact{
+		padding-bottom: 80px;
+	}
+	.contact__title,
+	.contact__text{
+		text-align: center;
+	}
+
 }
 
 @media (max-width: 450px) {
@@ -905,12 +1040,12 @@
 	}
 	/* ---------- */
 
-	.testimonials__slide{
+	.testimonials__slide {
 		padding: 30px 15px 30px;
 		text-align: center;
 		gap: 20px;
 	}
-	.testimonials__student-img{
+	.testimonials__student-img {
 		margin-bottom: 5px;
 	}
 }
