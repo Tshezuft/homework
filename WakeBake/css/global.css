@@ -1,11 +1,13 @@
 :root {
 	--general-text: #312c27;
 	--heading-text: #1f1711;
+	--accent-text-2:#ceaad0;
 	--general-bg: #fff9f4;
 	--accent-bg: #ffe0cb;
 	--accent-color: #ffa55c;
 	--transition: all 0.4s;
 	--border-radius: 20px;
+	--input-color: #ac907a;
 }
 .body {
 	font-family: "Montserrat", "Arial", sans-serif;
