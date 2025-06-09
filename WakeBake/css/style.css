@@ -718,10 +718,7 @@
 	}
 
 	/*  */
-	.contact__inner {
-		gap: 30px;
-		align-items: center;
-	}
+
 	.contact__inner::after {
 		top: -20%;
 	}
@@ -757,6 +754,11 @@
 	}
 	.accordion-content {
 		gap: 30px;
+	}
+	/*  */
+	.contact__inner {
+		gap: 30px;
+		align-items: center;
 	}
 }
 
