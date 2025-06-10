@@ -10,6 +10,9 @@
 	align-items: flex-end;
 	justify-content: space-between;
 }
+.header__hero {
+	padding: 50px 0 140px;
+}
 .header__logo-link {
 	z-index: 11;
 	max-width: 174px;
@@ -17,6 +20,7 @@
 .header__logo {
 	width: 100%;
 }
+
 .header__hero {
 	padding: 50px 0 140px;
 }
@@ -25,7 +29,6 @@
 	display: flex;
 	gap: 4vh 40px;
 }
-
 .nav__link {
 	display: block;
 	padding: 5px 0;
@@ -56,7 +59,6 @@
 	align-items: center;
 	justify-content: center;
 	z-index: 11;
-	/* background: transparent; */
 }
 .burger-icon span,
 .burger-icon span::before,
@@ -82,6 +84,7 @@
 .burger-icon span::after {
 	bottom: -8px;
 }
+
 .body--opened-menu .burger-icon span {
 	background: transparent;
 }
@@ -93,103 +96,6 @@
 	bottom: 0;
 	transform: rotate(-45deg);
 }
-
-.header__hero {
-	padding: 50px 0 140px;
-}
-.header {
-	background: url("../img/decor/header-bg.png") 50% 100% / cover no-repeat;
-}
-
-.header__top {
-	padding: 19px 0 0 0;
-}
-.header__top-inner {
-	display: flex;
-	align-items: flex-end;
-	justify-content: space-between;
-}
-.header__logo-link {
-	z-index: 11;
-	max-width: 174px;
-}
-.header__logo {
-	width: 100%;
-}
-
-.nav__list {
-	display: flex;
-	gap: 4vh 40px;
-}
-
-.nav__link {
-	display: block;
-	padding: 5px 0;
-	position: relative;
-	z-index: 1;
-}
-.nav__link::before {
-	content: "";
-	position: absolute;
-	top: -8px;
-	left: -13px;
-	z-index: -1;
-	width: 34px;
-	height: 34px;
-	border-radius: 50%;
-	background: var(--accent-color);
-	opacity: 0;
-	transition: all 0.45s;
-}
-.nav__link:hover::before {
-	opacity: 1;
-}
-
-.burger-icon {
-	display: none;
-	width: 50px;
-	height: 50px;
-	align-items: center;
-	justify-content: center;
-	z-index: 11;
-	/* background: transparent; */
-}
-.burger-icon span,
-.burger-icon span::before,
-.burger-icon span::after {
-	display: block;
-	width: 30px;
-	height: 3px;
-	border-radius: 100px;
-	background: var(--general-text);
-	transition: var(--transition);
-}
-.burger-icon span {
-	position: relative;
-}
-.burger-icon span::before,
-.burger-icon span::after {
-	content: "";
-	position: absolute;
-}
-.burger-icon span::before {
-	top: -8px;
-}
-.burger-icon span::after {
-	bottom: -8px;
-}
-.body--opened-menu .burger-icon span {
-	background: transparent;
-}
-.body--opened-menu .burger-icon span::before {
-	top: 0;
-	transform: rotate(45deg);
-}
-.body--opened-menu .burger-icon span::after {
-	bottom: 0;
-	transform: rotate(-45deg);
-}
-
 
 .hero__iner {
 	display: flex;

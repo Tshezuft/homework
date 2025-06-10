@@ -5,10 +5,16 @@
 	--general-bg: #fff9f4;
 	--accent-bg: #ffe0cb;
 	--accent-color: #ffa55c;
+	--input-color: #ac907a;
 	--transition: all 0.4s;
 	--border-radius: 20px;
-	--input-color: #ac907a;
 }
+
+html{
+	scroll-behavior: smooth;
+	scroll-padding-top: 5vh;
+}
+
 .body {
 	font-family: "Montserrat", "Arial", sans-serif;
 	line-height: 1.5;
@@ -21,6 +27,7 @@
 .body--opened-modal {
 	overflow: hidden;
 }
+
 .wrapper {
 	min-height: 100%;
 	width: 100%;
@@ -109,7 +116,7 @@
 }
 .modal__cancel:hover path,
 .modal__cancel:hover rect {
-	stroke: #ac907a;
+	stroke: var(--input-color);
 }
 .modal__img {
 	margin: -65px 0 15px 13px;
@@ -125,11 +132,10 @@
 .modal__text {
 	margin-bottom: 30px;
 }
-/* .modal__form {
-} */
 .modal__form-label {
 	margin-bottom: 10px;
 }
+
 .field {
 	position: relative;
 	display: block;
@@ -139,13 +145,13 @@
 	top: 12px;
 	left: 28px;
 	font-size: 11px;
-	color: #ac907a;
+	color: var(--input-color);
 	opacity: 0;
 	visibility: hidden;
 }
 .field__input {
 	display: block;
-	border: 1px solid #ac907a;
+	border: 1px solid var(--input-color);
 	background: transparent;
 	border-radius: 100px;
 	padding: 19px 41px 19px 28px;
@@ -156,6 +162,13 @@
 .field__input:hover {
 	border-color: var(--accent-color);
 }
+.field__input::placeholder {
+	color: var(--input-color);
+	transition: var(--transition);
+}
+.field__input:hover::placeholder {
+	color: var(--accent-color);
+}
 .field__input:focus {
 	padding: 26px 42px 12px 28px;
 }
@@ -164,11 +177,5 @@
 	visibility: visible;
 }
 
-.field__input::placeholder {
-	color: #ac907a;
-	transition: var(--transition);
-}
-.field__input:hover::placeholder {
-	color: var(--accent-color);
-}
+
 

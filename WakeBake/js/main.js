@@ -79,6 +79,7 @@
 
             const accordionControl = e.target.closest('.accordion-list__control');
             if (!accordionControl) return
+            e.preventDefault()
             const accordionItem = accordionControl.parentElement;
             const accordionContent = accordionControl.nextElementSibling;
 
@@ -126,8 +127,9 @@
             },
         }
     });
-    
-        // slider-отзывы
+
+
+    // slider-отзывы
     new Swiper('.testimonials__slider', {
 
         spaceBetween: 0,
@@ -161,8 +163,6 @@
 
     const im = new Inputmask('+7 (999) 999-99-99');
     im.mask(telInputs);
-
-
 
 
 })()
