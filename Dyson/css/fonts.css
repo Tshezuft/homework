@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "NAMU";
+    src: local('NAMU Pro'), local('NAMU-Pro'),
+        url('../fonts/NAMU-Pro.woff2') format('woff2'),
+        url('../fonts/NAMU-Pro.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "OpenSans";
+    src: local('OpenSans light'), local('Open-Sans-light'),
+        url('../fonts/OpenSans-Light.woff2') format('woff2'),
+        url('../fonts/OpenSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "OpenSans";
+    src: local('OpenSans regular'), local('Open-Sans regular'),
+        url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+        url('../fonts/OpenSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
