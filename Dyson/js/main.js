@@ -2,92 +2,43 @@
 
 (function(){
 // add to cart
-const decreaseBtn = document.getElementById('decrease');
-const increaseBtn = document.getElementById('increase');
-const quantityDisplay = document.getElementById('quantity');
+document.addEventListener('click', function(e) {
+    if (e.target.matches('.increase')) {
+        const card = e.target.closest('.offers__catalogue-buttons');
+        const quantityDisplay = card.querySelector('.quantity');
+        let quantity = parseInt(quantityDisplay.textContent);
+        quantity++;
+        quantityDisplay.textContent = quantity;
+    }
 
-let quantity = parseInt(quantityDisplay.textContent);
-
-increaseBtn.addEventListener('click', () => {
-    quantity++;
-    quantityDisplay.textContent = quantity;
-});
-
-decreaseBtn.addEventListener('click', () => {
-    if (quantity >1) {
+    if (e.target.matches('.decrease')) {
+        const card = e.target.closest('.offers__catalogue-buttons');
+        const quantityDisplay = card.querySelector('.quantity');
+        let quantity = parseInt(quantityDisplay.textContent);
+        if (quantity > 1) {
         quantity--;
         quantityDisplay.textContent = quantity;
     }
+    }
 });
+
 
 // -------swiper-catalogue------------
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const images = document.querySelectorAll('.offers__catalogue-img img');
-//     let imagesLoaded = 0;
-    
-//     images.forEach((img) => {
-//         img.addEventListener('load', () => {
-//         imagesLoaded++;
-//         if (imagesLoaded === images.length) {
-// // _________________________________________
-// const swiper = new Swiper('.offers__catalogue', {
-
-//     spaceBetween: 10,
-//     slidesPerView: 2,
-//     slidesPerGroup: 2,
-//     grid: {
-//         rows: 2,
-//         fill: 'row',
-//     },
-//     autoHeight: true,
-
-//     pagination: {
-//         el: '.offers__page-pagination',
-//         type: 'fraction',
-//         renderFraction: function (currentClass, totalClass) {
-//             return '<span class="' + currentClass + '"></span>' +
-//                     ' из ' +
-//                     '<span class="' + totalClass + '"></span>';
-//         },
-//     },
-
-//     navigation: {
-//         nextEl: '.offers__page-next',
-//         prevEl: '.offers__page-prev',
-//     },
-
-//     breakpoints: {
-
-//         701: {
-//             slidesPerView: 3,
-//             slidesPerGroup: 3,
-//             spaceBetween: 20,
-
-        
-//         },
-//     }
-// });
-// }
-// });
-// });
-// });
-    
 
 // ---------------------------second chanse_------------------------
 document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('.offers__catalogue-img img');
     let imagesLoaded = 0;
 
-    const checkAndInitSwiper = () => {
-        if (imagesLoaded === images.length) {
             // Все изображения загружены — инициализируем Swiper
             new Swiper('.offers__catalogue', {
                 spaceBetween: 10,
                 slidesPerView: 2,
                 slidesPerGroup: 2,
-                grid: { rows: 2, fill: 'row' },
-                autoHeight: true,
+
+                grid: { columns: 3, rows: 2, fill: 'row' },
+                allowTouchMove: false,
                 pagination: {
                     el: '.offers__page-pagination',
                     type: 'fraction',
@@ -109,17 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                 }
             });
-        }
-    };
-
-    images.forEach((img) => {
-        const onImageLoadOrError = () => {
-            imagesLoaded++;
-            checkAndInitSwiper();
-        };
-        img.addEventListener('load', onImageLoadOrError);
-        img.addEventListener('error', onImageLoadOrError);
-    });
 });
 
 // -------swiper-equip------------
@@ -127,25 +67,26 @@ document.addEventListener('DOMContentLoaded', () => {
 const swiperEquip = new Swiper('.equipment__slider', {
 
     spaceBetween: 20,
-    slidesPerView: 4,
-    
+    slidesPerView: 1,
+    grid: { rows: 1, fill: 'row' },
+    autoHeight:true,
 
     navigation: {
         nextEl: '.equipment__next',
         prevEl: '.equipment__prev',
     },
 
-    // breakpoints: {
+    breakpoints: {
     //     600: {
     //         slidesPerView: 3,
     //     },
-    //     801: {
-    //         spaceBetween: 32,
-    //     },
-    //     1101: {
-    //         slidesPerView: 4,
-    //     },
-    // }
+        701: {
+            slidesPerView: 3,
+        },
+        1301: {
+            slidesPerView: 4,
+        },
+    }
 });
 
 
@@ -181,6 +122,22 @@ accordionLists.forEach(el =>{
 
     });
 });
+
+// burger
+(function(){
+    const body = document.body;
+    document.addEventListener('click', burgerInit)
+    function burgerInit(e){
+        const burgerIcon = e.target.closest('.burger-icon')
+        const navLink = e.target.closest('.header__link')
+        if (!burgerIcon && !navLink) {return} 
+        else{
+            body.classList.toggle('body--opened-menu');
+        }
+        }
+    
+
+} )();
 
 
 

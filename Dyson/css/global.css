@@ -1,14 +1,17 @@
 :root {
-	--general-color: #111111;
+	--general-text: #111111;
 	--accent-color: #c5358c;
 	--general-bg: #dddddd;
 	--button-color:#4d57c8;
-	--transition: all .4s;
+	--transition: all .3s;
 }
 .body {
 	font-family: "OpenSans", "Arial", sans-serif;
 	color: var(--general-color);
 	font-weight: 300;
+}
+.body--opened-menu {
+	overflow: hidden;
 }
 .wrapper {
 	min-height: 100%;
@@ -27,6 +30,31 @@
 .main {
 	flex-grow: 1;
 }
+
+.offers__page-control button.swiper-button-disabled{
+	border-color: #ababab;
+}
+.equipment button.swiper-button-disabled{
+	border-color: #ababab;
+}
+.swiper-button-disabled path{
+	fill: #ababab;
+}
+
+.accent-color{
+	color: var(--accent-color);
+}
+.title{
+	font-family: "NAMU", sans-serif;
+	font-size: 42px;
+	line-height: 1.1;
+}
+.items-title {
+	font-family: "NAMU", sans-serif;
+	font-weight: 900;
+	font-size: 20px;
+}
+
 .btn {
 	background: var(--button-color);
 	font-size: 24px;
@@ -37,12 +65,4 @@
 	padding: 15px 10px;
 	max-height: 62px;
 	transition: var(--transition);
-}
-.accent-color{
-	color: var(--accent-color);
-}
-.title{
-	font-family: "NAMU", sans-serif;
-	font-size: 42px;
-	line-height: 1.1;
 }

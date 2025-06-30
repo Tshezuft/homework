@@ -1,5 +1,5 @@
 .header {
-	background: var(--general-color);
+	background: var(--general-text);
 	color: #ffffff;
 }
 .header__inner {
@@ -13,11 +13,62 @@
 	gap: 25px;
 	align-items: center;
 }
-.header__burger {
-	max-width: 50px;
+.burger-icon {
+	display: none;
+	width: 50px;
+	height: 50px;
+	align-items: center;
+	justify-content: center;
+	z-index: 11;
 }
+.burger-icon span,
+.burger-icon span::before,
+.burger-icon span::after {
+	display: block;
+	width: 30px;
+	height: 3px;
+	border-radius: 100px;
+	background: #ffffff;
+	transition: var(--transition);
+}
+.burger-icon span {
+	position: relative;
+}
+.burger-icon span::before,
+.burger-icon span::after {
+	content: "";
+	position: absolute;
+}
+.burger-icon span::before {
+	top: -8px;
+}
+.burger-icon span::after {
+	bottom: -8px;
+}
+.burger-icon:hover span,
+.burger-icon:hover span::before,
+.burger-icon:hover span::after{
+	background: var(--accent-color);
+}
+
+.body--opened-menu .burger-icon span {
+	background: transparent;
+}
+.body--opened-menu .burger-icon span::before {
+	top: 0;
+	transform: rotate(45deg);
+}
+.body--opened-menu .burger-icon span::after {
+	bottom: 0;
+	transform: rotate(-45deg);
+}
+
+
 .header__burger svg {
 	max-width: 100%;
+}
+.header__burger path {	
+	transition: var(--transition);
 }
 .header__burger:hover path {
 	stroke: var(--accent-color);
@@ -37,6 +88,8 @@
 	gap: 20px;
 }
 .header__item {
+	transition: var(--transition);
+
 }
 .header__item:hover {
     color: var(--accent-color);
@@ -52,9 +105,18 @@
 .header__number{
     font-weight: 700;
     line-height: 1.5;
+	transition: var(--transition);
+
+}
+.header__number:hover{
+	color: var(--accent-color);
 }
 .header__cart {
 	max-width: 36px;
+}
+
+.header__cart path {
+transition: var(--transition);
 }
 .header__cart:hover path {
 	stroke: var(--accent-color);
